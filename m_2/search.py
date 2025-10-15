@@ -11,6 +11,7 @@ def search(list: list, number: int) -> bool:
             right = middle - 1
     return False
 
+
 ex_list = [1, 2, 3, 45, 356, 569, 600, 705, 923]
 print(search(ex_list, 923))
 print(search(ex_list, 1))
