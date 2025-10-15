@@ -1,20 +1,24 @@
-import unittest.mock
 import collections
 import functools
+import unittest.mock
+
 
 def lru_cache(*dargs, **dkwargs):
-    maxsize = dkwargs.get('maxsize', 128)
+    maxsize = dkwargs.get("maxsize", 128)
     if len(dargs) == 1 and callable(dargs[0]) and not dkwargs:
         func = dargs[0]
         return decorate(func, maxsize)
-    else: 
+    else:
+
         def wrapper(func):
             return decorate(func, maxsize)
+
         return wrapper
-    
+
+
 def decorate(func, maxsize):
     cache = collections.OrderedDict()
-    
+
     @functools.wraps(func)
     def wrapped(*args, **kwargs):
         key = args + tuple(sorted(kwargs.items()))
@@ -26,7 +30,9 @@ def decorate(func, maxsize):
         if len(cache) > maxsize:
             cache.popitem(last=False)
         return result
+
     return wrapped
+
 
 @lru_cache
 def sum(a: int, b: int) -> int:
@@ -43,8 +49,7 @@ def multiply(a: int, b: int) -> int:
     return a * b
 
 
-if __name__ == '__main__':
-    
+if __name__ == "__main__":
     assert sum(1, 2) == 3
     assert sum(3, 4) == 7
 
