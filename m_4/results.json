@@ -1,0 +1,18 @@
+{
+  "sequential": {
+    "time": 9.54275107383728,
+    "speedup": 1.0
+  },
+  "variant_a_threads": {
+    "time": 9.576248168945312,
+    "speedup": 0.9965020648465795
+  },
+  "variant_b_process_pool": {
+    "time": 2.0896029472351074,
+    "speedup": 4.566777189161189
+  },
+  "variant_c_manual_processes": {
+    "time": 2.0327069759368896,
+    "speedup": 4.694602412843571
+  }
+}

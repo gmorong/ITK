@@ -1,0 +1,5 @@
+https://jsonplaceholder.typicode.com/posts/1
+https://jsonplaceholder.typicode.com/posts/2
+https://jsonplaceholder.typicode.com/users/1
+https://api.github.com/users/github
+https://httpbin.org/json
